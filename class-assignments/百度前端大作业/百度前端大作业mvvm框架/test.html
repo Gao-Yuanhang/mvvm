@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MueTest</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>以下是使用双大括号语法时获取data中各元素的值</div>
+        <div>msg:{{msg}}</div>
+        <div>msg2:{{msg2}}</div>
+        <div>obj对象value:{{obj.value}}</div>
+        <div>obj对象name：{{obj.name}}</div>
+        
+        <div>以下是对v-text的绑定</div>
+        <div v-text='msg'></div>
+        <div v-text='obj.name'></div>
+
+        <div>以下是对v-html的绑定</div>
+        <div v-html='msg2'></div>
+        
+        <div>实现单向绑定</div>
+        <div>点击按钮后执行的函数会改变msg与obj的内容，从而引起视图层的更改</div>
+        <button v-on:click='test1'>testFn1</button>
+        <button @click='test2'>testFn2</button>
+        <button v-on:click='test3'>testFn3</button>
+
+        <div>实现双向绑定</div>
+        <div>尝试修改输入框中的内容并观察最上面data中各项的值</div>
+        <div>可以观察到对应元素视图层的值与输入框内容同步修改更新</div>
+        <input v-model='msg2' type="text" />
+        <input v-model='obj.name' type="text" />
+        
+    </div>
+
+</body>
+
+</html>
+
+<script src="mue.js" type="module"></script>
